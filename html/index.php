@@ -124,7 +124,7 @@
 
             <!-- Tables -->
             <li class="menu-item">
-              <a href="tables-basic.html" class="menu-link">
+              <a href="tables-basic.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Tables">Members</div>
               </a>
@@ -263,16 +263,16 @@
                               </button>
                               
                               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId" style="max-height: 200px; overflow-y: auto;">
-                                <a class="dropdown-item" onclick="setSelectedValue(1,'귤')">귤</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(2,'사과')">사과</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(3, '포도')">포도</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(4,'감자')">감자</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(5,'배추')">배추</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(6,'양파')">양파</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(7,'갈치')">갈치</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(8,'고등어')">고등어</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(9,'닭고기')">닭고기</a>
-                                <a class="dropdown-item" onclick="setSelectedValue(10,'돼지고기')">돼지고기</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(1,'tangerine')">tangerine</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(2,'apple')">apple</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(3, 'grapes')">grapes</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(4,'potato')">potato</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(5,'napacabbage')">napacabbage</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(6,'onion')">onion</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(7,'cutlassfish')">cutlassfish</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(8,'mackerel')">mackerel</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(9,'chicken')">chicken</a>
+                                <a class="dropdown-item" onclick="setSelectedValue(10,'pork')">pork</a>
                               </div>
 
                               <form id="category" method="POST"  action="search-price.php">

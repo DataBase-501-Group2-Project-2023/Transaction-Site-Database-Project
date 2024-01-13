@@ -7,7 +7,7 @@ if (isset($_SESSION['user_id'])) {
 
     // Oracle DB 연결 정보
     $oracle_user_name = "S3_501";
-    $oracle_password = "__";
+    $oracle_password = "pw1234";
     $oracle_db = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=203.249.87.57)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=orcl)))";
 
     // Oracle DB 연결

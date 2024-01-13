@@ -19,12 +19,15 @@ $wp = 0;
 $checkcounter = 0;
 
 $oracle_username = "S3_501";
-$oracle_password = "__";
+$oracle_password = "pw1234";
 $oracle_db = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=203.249.87.57)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=orcl)))";
 
 $conn = oci_connect($oracle_username, $oracle_password, $oracle_db,'UTF8');
 
 if (!$conn) {
+    $response = array();
+    $response["success"] = false;
+    echo json_encode($response);
     $error = oci_error();
     echo "DB에 연결할 수 없습니다: " . $error['message'];
     exit;
@@ -50,16 +53,22 @@ if(!is_null($user_id)){
 
 if($checkcounter > 0){
     $wu = 1;
-    echo "<script>alert('이미 사용중인 아이디입니다. 다시 작성해주세요');</script>";
-    echo "<script type='text/javascript'>
-        location.href='auth-register-basic.php' 
-        </script>";
+    $response = array();
+    $response["success"] = false;
+    echo json_encode($response);
+    //echo "<script>alert('이미 사용중인 아이디입니다. 다시 작성해주세요');</script>";
+    //echo "<script type='text/javascript'>
+    //    location.href='auth-register-basic.php' 
+    //    </script>";
 } elseif ($user_password != $user_passwordcheck){
     $wp = 1;
-    echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 작성해주세요');</script>";
-    echo "<script type='text/javascript'>
-    location.href='auth-register-basic.php'
-    </script>";
+    $response = array();
+    $response["success"] = false;
+    echo json_encode($response);
+    //echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 작성해주세요');</script>";
+    //echo "<script type='text/javascript'>
+    //location.href='auth-register-basic.php'
+    //</script>";
 } else{
     $encrypted_password = password_hash($user_password, PASSWORD_DEFAULT);
     $query = "INSERT INTO USERS (user_id, user_name, user_phone, user_email, user_city, user_password) VALUES ('$user_id', '$user_name', '$user_phone', '$user_email', '$user_city', '$encrypted_password')";
@@ -73,14 +82,20 @@ if($checkcounter > 0){
 
     if (!$result) {
         $error = oci_error($stmt);
-        echo "쿼리를 실행할 수 없습니다: " . $error['message'];
+        $response = array();
+        $response["success"] = false;
+        echo json_encode($response);
+        //echo "쿼리를 실행할 수 없습니다: " . $error['message'];
         oci_rollback($conn);
         exit;
 }
-    echo "<script>alert('회원가입이 완료 되었습니다. 로그인을 진행해주세요');</script>";
-    echo "<script type='text/javascript'>
-    location.href='auth-login-basic.php' 
-    </script>";
+    $response = array();
+    $response["success"] = true;
+    echo json_encode($response);
+    //echo "<script>alert('회원가입이 완료 되었습니다. 로그인을 진행해주세요');</script>";
+    //echo "<script type='text/javascript'>
+    //location.href='auth-login-basic.php' 
+    //</script>";
 }
 
 

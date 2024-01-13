@@ -26,6 +26,7 @@
 # My Account Information [ 유저 개인 정보 수정 기능 & 거래 내역 조회 ]
 <img width="1470" alt="스크린샷 2023-11-22 오후 11 51 28" src="https://github.com/WellshCorgi/Transaction-Site-Database-Project/assets/112881296/05948e2f-78df-4009-8657-1651d762ee5c">
 
+
 ### 작동 파일
 - account-settings.php
 - user_information.php
